@@ -1,39 +1,31 @@
 \chapter{Kravspecifikation}
 \label{ch:kravspecifikation}
 
-\subsection{Formål}
-\subsection{Referencer}
-\subsection{Ordliste}
-
-\section{Generel beskrivelse}
-\subsection{Systemoversigt}
-\subsection{Systembeskrivelse}
+\section{Systembeskrivelse}
 
 \section{Funktionelle krav}
-\subsection{Aktørdiagram}
-\subsection{Systemets aktører}
-\subsection{Use case diagram}
-\subsection{Use cases}
-\begin{table}[htbp]
-\centering
-\begin{tabular}{|l|p{10cm}|}
-\multicolumn{2}{l}{{\Large USECASENAVN}} \\\hline
-%\hline
-\textbf{Use Case ID} &\textbf{1}\\\hline
-Mål&\\\hline
-Initialisering&\\\hline
-Aktører&\\\hline
-Referencer&\\\hline
-Antal af samtidige hændelser&\\\hline
-Forudsætninger&\\\hline
-Slutbetingelser&\\\hline
-Hovedscenarie&\\\hline
-Undtagelse&\\\hline
+\section{Aktører}
+\subsection{Aktørbeskrivelse}
+
+% Booktabs require to add \usepackage{booktabs} to your document preamble
+\begin{table}[h]
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Aktør} & \textbf{Type} & \textbf{Beskrivelse}                                          \\ \midrule
+Bruger         & Primær        & Brugeren er en person, som benytter BeaconLib eller BeaconHot \\ \midrule
+BeaconBackend  &               & Web-delen af projektet                                        \\ \midrule
+BeaconLib      &               & Framework                                                     \\ \midrule
+BeaconDummy    &               & iPhone applikaton                                             \\ \midrule
+BeaconHot      &               & iPad applikation                                              \\ \bottomrule
 \end{tabular}
-\caption{Use case: USECASENAVN}
-\label{tabel:USECASENAVN}
 \end{table}
 
-\section{Ikke-funktionelle krav}
-
-\section{Kvalitetsfaktorer}
+\subsection{Aktørdiagram}
+\section{Brugsscenarier}
+\begin{itemize}
+\item Scenario 1 
+\item Scenarie 2 
+\item Scenarie 3 
+\item Scenarie 4 
+\item Scenarie 5 
+\end{itemize}
