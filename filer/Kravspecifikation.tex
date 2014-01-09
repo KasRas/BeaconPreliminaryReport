@@ -1,9 +1,6 @@
 \chapter{Kravspecifikation}
 \label{ch:kravspecifikation}
 
-\section{Systembeskrivelse}
-
-\section{Funktionelle krav}
 \section{Aktører}
 \subsection{Aktørbeskrivelse}
 
@@ -12,30 +9,31 @@
 \begin{tabular}{@{}lll@{}}
 \toprule
 \textbf{Aktør} & \textbf{Type} & \textbf{Beskrivelse}                                          \\ \midrule
-Bruger         & Primær        & Brugeren er en person, som benytter BeaconDummy eller BeaconHot \\ \midrule
-BeaconBackend  &               & Web-delen af projektet                                        \\ \midrule
-BeaconLib      &               & Framework                                                     \\ \midrule
-BeaconDummy    &               & iPhone applikaton                                             \\ \midrule
-BeaconHot      &               & iPad applikation                                              \\ \bottomrule
+Bruger         & Primær        & Brugeren er en person, som benytter BeaconApp eller BeaconVisualiser \\ \midrule
+BeaconBackend  & Sekundær               & Web-delen af projektet                                        \\ \midrule
+BeaconLib      &  Sekundær              & Bibliotek                                                    \\ \midrule
+BeaconApp    & Sekundær               & iPhone applikaton                                             \\ \midrule
+BeaconVisualiser      & Sekundær               & iPad applikation                                              \\ \bottomrule
 \end{tabular}
 \end{table}
 
-\subsection{Aktørdiagram}
-\fxnote{Indsæt aktørdiagram!}
 \section{Brugsscenarier}
-\begin{itemize}
-\item Præsentation af heat map
-Brugeren bruger BeaconHot til at få en præsentation af flowet i området hvor der er opsat beacons. Denne præsentation er et heatmap og et eksempel herpå kan ses i figure \ref{fig:heatmap}. 
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.6\textwidth]{billeder/heat-map}
-\caption{Eksempel på hvordan en præsentation af områdeflow kan se ud}
-\label{fig:heatmap}
-\end{figure}
+Følgende brugsscenarier beskriver den overordnede funktionalitet.
 
-\item Scenarie 2 
-\item Scenarie 3 
-\item Scenarie 4 
-\item Scenarie 5 
-\end{itemize}
+\begin{enumerate}
+	\item Opsamling af data
+		\begin{enumerate}
+			\item BeaconApp skal kunne registrere nærværende beacons' signalstyrker og ID og sende disse informationer til BeaconBackend.
+		\end{enumerate}
+		
+	\item Persistering af data
+		\begin{enumerate}
+			\item BeaconBackend skal kunne gemme alt modtaget data i en database så data senere kan blive hentet ud og behandlet.
+		\end{enumerate}
+		
+	\item Grafisk visuliasering af data
+	\begin{enumerate}
+		\item BeaconVisualiser skal på initialisering af Bruger kunne visualisere data  fra BeaconBackend.
+	\end{enumerate}		
+\end{enumerate}
