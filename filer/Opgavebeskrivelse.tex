@@ -8,8 +8,8 @@ Systemet består af følgende fire delprojekter:
 \begin{itemize}
 	\item BeaconLib
 	\item BeaconBackend
-	\item BeaconDummy
-	\item BeaconHot
+	\item BeaconApp
+	\item BeaconVisualiser
 \end{itemize}
 
 \subsection{BeaconLib}
@@ -18,11 +18,11 @@ Det iOS bibliotek, der fortolker den rå proximity data, transmitterer den forto
 \subsection{BeaconBackend}
 Backenden persisterer data i en database og udstiller igennem et REST API alt opsamlet data. BeaconBackend skrives i Ruby vha. Sinatra web frameworket. Data hostes af Parse.com.
 
-\subsection{BeaconDummy}
-BeaconDummy er iPhone app, som brugeren skal have installeret for at kunne blive tracket. App'en gør ikke andet end at modtage proximity data og delegere det videre til BeaconLib. BeaconDummy benytter BeaconLib og er en native iOS app.
+\subsection{BeaconApp}
+BeaconApp er iPhone app, som brugeren skal have installeret for at kunne blive tracket. App'en gør ikke andet end at modtage proximity data og delegere det videre til BeaconLib. BeaconApp benytter BeaconLib og er en native iOS app.
 
-\subsection{BeaconHot}
-BeaconHot er en iPad app, som visualiserer data opsamlet på af en BeaconDummy app. BeaconHot benytter BeaconLib og er en native iOS app.
+\subsection{BeaconVisualisation}
+BeaconVisualisation er en iPad app, som visualiserer data opsamlet af BeaconVisualisation. BeaconVisualisation benytter BeaconLib og er en native iOS app.
 
 \section{Ordforklaring og Terminologi}
 
@@ -42,13 +42,5 @@ BeaconHot er en iPad app, som visualiserer data opsamlet på af en BeaconDummy a
 	\item BLE
 		\begin{itemize}
 			\item Forkortelse for Bluetooth Low Energy.
-		\end{itemize}
-		
-	\item Delprojektsforkortelser
-		\begin{itemize}
-			\item Lib - BeaconLib
-			\item Backend - BeaconBackend
-			\item Dummy - BeaconDummy
-			\item Hot - BeaconHot
 		\end{itemize}
 \end{itemize}
