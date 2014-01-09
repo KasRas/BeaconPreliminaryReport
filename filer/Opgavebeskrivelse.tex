@@ -1,2 +1,54 @@
 \chapter{Opgavebeskrivelse}
-Her er vores opgavebeskrivelse
+
+Der ønskes udviklet et system, der vha. proximity data fra Bluetooth Low Energy (BTE) enheder (beacons) kan tracke en iPhone bruger, som bevæger sig i et område dækket af beacons. Der udvikles et iOS bibliotek, som fortolker proximity data leveret af iOS' iBeacon teknologi. Den fortolkede data persisteres på remote og tilgængeliggøres for klient applikationer via et REST API.
+
+\section{Delprojekter}
+Systemet består af følgende fire delprojekter:
+
+\begin{itemize}
+	\item BeaconLib
+	\item BeaconBackend
+	\item BeaconDummy
+	\item BeaconHot
+\end{itemize}
+
+\subsection{BeaconLib}
+Det iOS bibliotek, der fortolker den rå proximity data, transmitterer den fortolkede data til en backend samt tilgængeliggør kald til backenden, så persisteret data kan hentes ud. BeaconLib skrives i Objective-C og bygges som et statisk bibliotek.
+
+\subsection{BeaconBackend}
+Backenden persisterer data i en database og udstiller igennem et REST API alt opsamlet data. BeaconBackend skrives i Ruby vha. Sinatra web frameworket. Data hostes af Parse.com.
+
+\subsection{BeaconDummy}
+BeaconDummy er iPhone app, som brugeren skal have installeret for at kunne blive tracket. App'en gør ikke andet end at modtage proximity data og delegere det videre til BeaconLib. BeaconDummy benytter BeaconLib og er en native iOS app.
+
+\subsection{BeaconHot}
+BeaconHot er en iPad app, som visualiserer data opsamlet på af en BeaconDummy app. BeaconHot benytter BeaconLib og er en native iOS app.
+
+\section{Ordforklaring og Terminologi}
+
+\begin{itemize}
+	\item iBeacon
+		\begin{itemize}
+			\item En BTE enhed, der udsender små datapakker i overenstemmelse med Apple's protokol. Protokollen beskrives yderligere i den færdige rapport.
+			\item iBeacons tilbyder envejskommunikation. Dvs. at der ikke kan sendes data tilbage til en iBeacon.
+			\item iBeacon og beacon beskriver den samme type af enheder.
+		\end{itemize}
+		
+	\item Beacon
+		\begin{itemize}
+			\item iPhones, iPads og tredjepartsenheder kan agere beacons. I dette projekt refererer beacon altid til Estimote's \footnote{www.estimote.com} beacon, som er den, der benyttes.
+		\end{itemize}
+		
+	\item BLE
+		\begin{itemize}
+			\item Forkortelse for Bluetooth Low Energy.
+		\end{itemize}
+		
+	\item Delprojektsforkortelser
+		\begin{itemize}
+			\item Lib - BeaconLib
+			\item Backend - BeaconBackend
+			\item Dummy - BeaconDummy
+			\item Hot - BeaconHot
+		\end{itemize}
+\end{itemize}
