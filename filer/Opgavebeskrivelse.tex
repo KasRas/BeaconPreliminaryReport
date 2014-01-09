@@ -1,9 +1,9 @@
 \chapter{Opgavebeskrivelse}
 
-Der ønskes udviklet et system, der vha. proximity data fra Bluetooth Low Energy (BTE) enheder (beacons) kan tracke en iPhone bruger, som bevæger sig i et område dækket af beacons. Der udvikles et iOS bibliotek, som fortolker proximity data leveret af iOS' iBeacon teknologi. Den fortolkede data persisteres på remote og tilgængeliggøres for klient applikationer via et REST API.
+Der ønskes udviklet et system, der vha. proximity data fra Bluetooth Low Energy (BTE) enheder (beacons) kan tracke en iPhone bruger, som bevæger sig i et område dækket af beacons. Der udvikles et iOS bibliotek, som fortolker proximity data leveret af iOS' iBeacon teknologi. Den fortolkede data persisteres eksternt og tilgængeliggøres for klientapplikationer via et REST API.
 
 \section{Delprojekter}
-Systemet består af følgende fire delprojekter:
+Projektet består af følgende fire delprojekter:
 
 \begin{itemize}
 	\item BeaconLib
@@ -12,17 +12,21 @@ Systemet består af følgende fire delprojekter:
 	\item BeaconVisualiser
 \end{itemize}
 
-\subsection{BeaconLib}
-Det iOS bibliotek, der fortolker den rå proximity data, transmitterer den fortolkede data til en backend samt tilgængeliggør kald til backenden, så persisteret data kan hentes ud. BeaconLib skrives i Objective-C og bygges som et statisk bibliotek.
+\subsection{Systemet}
+Selve systemet som udviklere skal integrere i deres projekt.
+\subsubsection{BeaconLib}
+Det iOS bibliotek, der fortolker den rå proximity data, transmitterer den fortolkede data til en backend. BeaconLib skrives i Objective-C og bygges som et statisk bibliotek.
 
-\subsection{BeaconBackend}
+\subsubsection{BeaconBackend}
 Backenden persisterer data i en database og udstiller igennem et REST API alt opsamlet data. BeaconBackend skrives i Ruby vha. Sinatra web frameworket. Data hostes af Parse.com.
 
-\subsection{BeaconApp}
-BeaconApp er iPhone app, som brugeren skal have installeret for at kunne blive tracket. App'en gør ikke andet end at modtage proximity data og delegere det videre til BeaconLib. BeaconApp benytter BeaconLib og er en native iOS app.
+\subsection{Anvendelse af systemet}
+Eksempler på hvordan systemet kan anvendes.
+\subsubsection{BeaconApp}
+BeaconApp er en iPhone app, der ingen funktionalitet har ud over at muliggøre at tracke brugeren vha. BeaconLib. BeaconApp benytter BeaconLib og er en native iOS app. BeaconApp er ikke en del af vores kernesystem, men blot et eksempel på en applikation der anvender BeaconLib.
 
-\subsection{BeaconVisualiser}
-BeaconVisualiser er en iPad app, som visualiserer data opsamlet af BeaconApp. BeaconVisualiser benytter data fra BeaconBackend og er en native iOS app.
+\subsubsection{BeaconVisualiser}
+BeaconVisualiser er en iPad app, som visualiserer data opsamlet af BeaconApp. BeaconVisualiser er en native iOS app.
 
 \section{Ordforklaring og Terminologi}
 
@@ -41,11 +45,11 @@ BeaconVisualiser er en iPad app, som visualiserer data opsamlet af BeaconApp. Be
 		
 	\item BLE
 		\begin{itemize}
-			\item Forkortelse for Bluetooth Low Energy.
+			\item Forkortelse for Bluetooth Low Energy\footnote{\url{www.en.wikipedia.org/wiki/Bluetooth_low_energy}}.
 		\end{itemize}
 		
 	\item Parse
 		\begin{itemize}
-			\item Referer til Parse.com, der er en online service til persistering af data..
+			\item Referer til Parse.com\footnote{\url{www.parse.com/}}, der er en online service til persistering af data..
 		\end{itemize}
 \end{itemize}

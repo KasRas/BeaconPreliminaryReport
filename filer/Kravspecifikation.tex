@@ -10,7 +10,7 @@
 \toprule
 \textbf{Aktør} & \textbf{Type} & \textbf{Beskrivelse}                                          \\ \midrule
 Bruger         & Primær        & Brugeren er en person, som benytter BeaconApp eller BeaconVisualiser \\ \midrule
-BeaconBackend  & Sekundær               & Web-delen af projektet                                        \\ \midrule
+BeaconBackend  & Sekundær               & REST API	\\ \midrule
 BeaconLib      &  Sekundær              & Bibliotek                                                    \\ \midrule
 BeaconApp    & Sekundær               & iPhone applikaton                                             \\ \midrule
 BeaconVisualiser      & Sekundær               & iPad applikation                                              \\ \bottomrule
@@ -24,7 +24,7 @@ Følgende brugsscenarier beskriver den overordnede funktionalitet.
 \begin{enumerate}
 	\item Opsamling af data
 		\begin{enumerate}
-			\item BeaconApp skal kunne registrere nærværende beacons' signalstyrker og ID og sende disse informationer til BeaconBackend.
+			\item BeaconApp skal kunne registrere nærværende beacons' signalstyrker og ID og sende disse informationer til BeaconBackend ved hjælp af BeaconLib.
 		\end{enumerate}
 		
 	\item Persistering af data
